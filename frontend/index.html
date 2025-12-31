@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Password Analyzer</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Security<span class="highlight">Guard</span></div>
+        <ul class="nav-links">
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <header>
+            <h1>Security<span class="highlight">Guard</span></h1>
+            <p>Real-time Password Strength & Encryption Analysis</p>
+        </header>
+
+        <section class="analyzer-card">
+            <div class="input-group">
+                <input type="password" id="passwordInput" placeholder="Enter your password..." autocomplete="off">
+                <button id="togglePassword" class="icon-btn">👁️</button>
+            </div>
+
+            <div class="strength-meter-container">
+                <div class="strength-bar-bg">
+                    <div id="strengthBar" class="strength-bar"></div>
+                </div>
+                <p id="strengthText" class="strength-text">Enter a password</p>
+            </div>
+
+            <div class="feedback" id="feedbackArea"></div>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <h3>AES-256 Encryption</h3>
+                    <p class="subtitle">(Client-side via CryptoJS)</p>
+                    <div class="code-block" id="aesOutput">Waiting...</div>
+                </div>
+                <div class="result-card">
+                    <h3>SHA-256 Hash</h3>
+                    <p class="subtitle">(Server-side via Python Flask)</p>
+                    <div class="code-block" id="shaOutput">Waiting...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
